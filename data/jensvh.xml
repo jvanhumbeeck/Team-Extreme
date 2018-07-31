@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<root>
+  <info>
+    <hours>4.75</hours>
+    <piston>3.75</piston>
+    <oil>3.75</oil>
+    <oil_filter>3.75</oil_filter>
+  </info>
+  <settings>
+    <alert>2</alert>
+    <piston>20</piston>
+    <oil>2</oil>
+    <oil_filter>10</oil_filter>
+  </settings>
+  <tracks>
+    <track>
+      <name>Axel</name>
+      <adress>Te Axel</adress>
+      <tire>Zand</tire>
+      <susp_front>20</susp_front>
+      <susp_rear>10</susp_rear>
+    </track>
+  </tracks>
+  <logs>
+    <log>
+      <event>&lt;span&gt;1&lt;/span&gt; uur getraind in &lt;span&gt;Lommel&lt;/span&gt;.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>&lt;span&gt;0&lt;/span&gt; uur en &lt;span&gt;45&lt;/span&gt; minuten getraind in &lt;span&gt;Komen&lt;/span&gt;.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Lommel&lt;/span&gt; verwijderd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Axel&lt;/span&gt; verwijderd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event/>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;amiens&lt;/span&gt; gewijzigd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Amiens&lt;/span&gt; gewijzigd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Amiens&lt;/span&gt; gewijzigd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Amiens&lt;/span&gt; verwijderd.</event>
+      <date>31/07/2018</date>
+    </log>
+    <log>
+      <event>Parcour &lt;span&gt;Axel&lt;/span&gt; toegevoegd.</event>
+      <date>31/07/2018</date>
+    </log>
+  </logs>
+</root>

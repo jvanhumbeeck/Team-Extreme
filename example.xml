@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <info>
+    <hours>0</hours>
+    <piston>0</piston>
+    <oil>0</oil>
+    <oil_filter>0</oil_filter>
+  </info>
+  <settings>
+    <alert>2</alert>
+    <piston>20</piston>
+    <oil>2</oil>
+    <oil_filter>10</oil_filter>
+  </settings>
+  <tracks></tracks>
+  <logs></logs>
+</root>

@@ -1,0 +1,10 @@
+
+# HTID:4620820: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:4620820:
+IndexIgnore *
+
+<FilesMatch "users\.xml|data\.php|example\.xml|register\.php">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
