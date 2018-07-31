@@ -28,56 +28,6 @@ class xmlParser
 		$this->xml = simplexml_load_file("data/".$name.".xml");
 	}
 
-	/**
-	 * Get total hours driven with the bike
-	 * @return int the total hours
-	 */
-	public function getTotalHours()
-	{
-		return $this->xml->info->hours;
-	}
-
-	/**
-	 * Set total hours driven to a new value
-	 * @param int $new the new value
-	 */
-	public function setTotalHours($new)
-	{
-		$this->xml->info->hours = $new;
-	}
-
-	public function getPistonHours()
-	{
-		return $this->xml->info->piston;
-	}
-
-	public function setPistonHours($new)
-	{
-		$this->xml->info->piston = $new;
-	}
-
-	public function getOilHours()
-	{
-		return $this->xml->info->oil;
-	}
-
-	public function setOilHours($new)
-	{
-		$this->xml->info->oil = $new;
-	}
-
-	public function getOilfilterHours()
-	{
-		return $this->xml->info->oil_filter;
-	}
-
-	public function setOilfilterHours($new)
-	{
-		$this->xml->info->oil_filter = $new;
-	}
-
-
-
 	public function getAlert()
 	{
 		return $this->xml->settings->alert;
@@ -88,36 +38,15 @@ class xmlParser
 		$this->xml->settings->alert = $new;
 	}
 
-	public function getPistonChange()
+	public function getInfo()
 	{
-		return $this->xml->settings->piston;
+		return $this->xml->info;
 	}
 
-	public function setPistonChange($new)
+	public function getSettings()
 	{
-		$this->xml->settings->piston = $new;
+		return $this->xml->settings;
 	}
-
-	public function getOilChange()
-	{
-		return $this->xml->settings->oil;
-	}
-
-	public function setOilChange($new)
-	{
-		$this->xml->settings->oil = $new;
-	}
-
-	public function getOilfilterChange()
-	{
-		return $this->xml->settings->oil_filter;
-	}
-
-	public function setOilFilterChange($new)
-	{
-		$this->xml->settings->oil_filter = $new;
-	}
-
 
 	public function getTracks()
 	{
@@ -135,14 +64,13 @@ class xmlParser
 		return null;
 	}
 
-	public function addTrack($name, $adress, $tire, $susp_front, $susp_rear)
+	public function addTrack($name, $array)
 	{
 		$track = $this->xml->tracks->addChild("track");
-		$track->addChild("name", $name);
-		$track->addChild("adress", $adress);
-		$track->addChild("tire", $tire);
-		$track->addChild("susp_front", $susp_front);
-		$track->addChild("susp_rear", $susp_rear);
+		$track->addChild("naam", $name)->addAttribute("string", "Naam: X.");
+		foreach($array as $child) {
+			$track->addChild($child[0], $child[1])->addAttribute("string", $child[2]);
+		}
 	}
 
 	public function removeTrack($name)
@@ -171,6 +99,11 @@ class xmlParser
 	public function getLogs()
 	{
 		return $this->xml->logs->log;
+	}
+
+	public function printValue($value)
+	{
+		echo '<span>' . $value . '</span>';
 	}
 
 	public function saveXml()
