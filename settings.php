@@ -52,7 +52,7 @@ $data = new xmlParser(getCookie("data"));
 					}
 				}
 				?>
-				<button class="button" onclick="return openVariable();">Variabele toevoegen</button><br>
+				<button class="button" onclick="return openVariable();">Item toevoegen</button><br>
 				<input type="submit" value="Instellingen opslaan">
 				<a class="terug" href="bikesetup.php"><span class="back"></span>Terug</a>
 			</form>
@@ -61,12 +61,12 @@ $data = new xmlParser(getCookie("data"));
 		<div class="addVariable">
 			<div class="container">
 				<div class="holder">
-					<h1>Variabele toevoegen</h1>
+					<h1>Item toevoegen</h1>
 					<p>Naam: <input id="name" type="text" autocomplete="off"> <span id="name_err" class="error"></span><br>(Zonder spaties)<br>(Bv: "Onderhoud").</p>
 					<p>Weergave: <input id="string" type="text" autocomplete="off"> <span id="string_err" class="error"></span><br>(Met X als uren en Y als minuten.)<br>(Bv: "Onderhoud: X uur en Y minuten geleden.").</p>
 					<p>Set: <input id="set" type="text" autocomplete="off"> <span id="set_err" class="error"></span><br>
 						(Met X als uren) <br>(Bv: "Onderhoud om de X uur.").</p>
-					<input type="submit" onclick="return addVariable();" value="Variable toevoegen">
+					<input type="submit" onclick="return addVariable();" value="Item toevoegen">
 					<button class="terug" onclick="return back();"><span class="back"></span>Terug</button>
 				</div>
 			</div>

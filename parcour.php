@@ -58,7 +58,7 @@ if(isset($_GET["error"])) {
 							echo '<p>' . $data->setMessage($track, false) . ' <a class="remove" href="' . $track->getName() . '" onclick="return removeVariable(this, true);"><span class="delete"></span>Remove</a></p>';
 						}
 					}
-					echo '<button class="button" onclick="return openVariable();">Variabele toevoegen</button><br>';
+					echo '<button class="button" onclick="return openVariable();">Item toevoegen</button><br>';
 					echo '<input type="submit" value="Parcour opslaan" onsubmit="return validateForm()">';
 
 				}else {
@@ -71,7 +71,7 @@ if(isset($_GET["error"])) {
 							echo '<p>' . $data->setMessage($track, false) . ' <a class="remove" href="' . $track->getName() . '" onclick="return removeVariable(this, false);"><span class="delete"></span>Remove</a></p>';
 						}
 					}
-					echo '<button class="button" onclick="return openVariable();">Variabele toevoegen</button><br>';
+					echo '<button class="button" onclick="return openVariable();">Item toevoegen</button><br>';
 					echo '<input type="submit" value="Parcour toevoegen" onsubmit="return validateForm()">';
 				}
 
@@ -84,10 +84,10 @@ if(isset($_GET["error"])) {
 			<div class="addVariable">
 				<div class="container">
 					<div class="holder">
-						<h1>Variabele toevoegen</h1>
+						<h1>Item toevoegen</h1>
 						<p>Naam: <input id="name" type="text" autocomplete="off"> <span id="name_err" class="error"></span><br>(Zonder spaties).</p>
 						<p>Weergave: <input id="string" type="text" autocomplete="off"> <span id="string_err" class="error"></span><br>(Met X als de veriabele. Bv: "Druk: X bar.").</p>
-						<input type="submit" onclick="return addVariable(<?php echo ((isset($_POST["track"])) ? "true" : "false"); ?>);" value="Variable toevoegen">
+						<input type="submit" onclick="return addVariable(<?php echo ((isset($_POST["track"])) ? "true" : "false"); ?>);" value="Item toevoegen">
 						<button class="terug" onclick="return back();"><span class="back"></span>Terug</button>
 					</div>
 				</div>

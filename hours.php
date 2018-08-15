@@ -26,7 +26,7 @@ $data = new xmlParser(getCookie("data"));
 		<link rel="icon" href="images/favicon.png">
 	</head>
 	
-	<body class="race" style="background-color: #9e1c1c;">
+	<body class="race" style="background-color: #d23535;">
 		<!-- header -->
 		<div class="header">
 			<h1 onclick="window.location.href = 'index.html';">Team Extreme</h1>
