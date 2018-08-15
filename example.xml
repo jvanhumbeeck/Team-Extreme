@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <root>
   <info>
-    <total string="Totaal gereden: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </total>
+    <totaal string="Totaal gereden: X uur en Y minuten.">
+      <uren>0</uren>
+      <minuten>0</minuten>
+    </totaal>
     <piston string="Uren gereden met piston: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
+      <uren>0</uren>
+      <minuten>0</minuten>
     </piston>
-    <oil string="Uren gereden met olie: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </oil>
-    <oil_filter string="Uren gereden met olie filter: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </oil_filter>
+    <olie string="Uren gereden met olie: X uur en Y minuten.">
+      <uren>0</uren>
+      <minuten>0</minuten>
+    </olie>
+    <oliefilter string="Uren gereden met olie filter: X uur en Y minuten.">
+      <uren>0</uren>
+      <minuten>0</minuten>
+    </oliefilter>
   </info>
   <settings>
     <alert string="Melding X uur op voohand ontvangen.">2</alert>
@@ -25,13 +25,13 @@
     <oliefilter string="Oliefilter om de X uur vervangen.">10</oliefilter>
   </settings>
   <tracks>
-    <track>
-      <naam string="Naam: X.">Axel</naam>
-      <adres string="Adres: X.">Te Axel</adres>
-      <band string="Band: X.">Zand</tire>
-      <voorvering string="Voorvering: X klikken.">20</voorvering>
-      <achtervering string="Achtervering: X klikken.">10</achtervering>
-    </track>
+    <example>
+      <naam string="Naam: X."></naam>
+      <adres string="Adres: X."></adres>
+      <band string="Band: X."></band>
+      <voorvering string="Voorvering: X klikken."></voorvering>
+      <achtervering string="Achtervering: X klikken."></achtervering>
+    </example>
   </tracks>
   <logs></logs>
 </root>

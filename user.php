@@ -20,7 +20,8 @@ if(hasCookie("data")) {
 	<head>
 		<title>Inloggen</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="icon" href="images/favicon.jpg">
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<link rel="icon" href="images/favicon.png">
 	</head>
 	
 	<body class="turnstile" style="background-color: #a02a2a;" onload="this.height = document.documentElement.scrollHeight;">
@@ -34,22 +35,27 @@ if(hasCookie("data")) {
 			</div>
 		</div>
 
-		<h1>Inloggen</h1>
-		<form action="" method="POST">
-			<p>Gebruikersnaam: <input type="text" name="username" value="<?php echo $username; ?>"></p>
-			<p>Wachtwoord: <input type="password" name="password"></p>
-			<p><span style="color: red; text-shadow: 0px 0px 2px #000000;"><?php echo $error; ?></span></p>
-			<input type="submit" name="login" value="Login">
-		</form>
+		<div class="user">
+			<div class="login">
+				<h1>Inloggen</h1>
+				<form action="" method="POST">
+					<p><span>Gebruikersnaam: </span><input type="text" name="username" value="<?php echo $username; ?>"></p>
+					<p><span>Wachtwoord: </span><input type="password" name="password"></p>
+					<p><span style="color: red; text-shadow: 0px 0px 2px #000000;"><?php echo $error; ?></span></p>
+					<input type="submit" name="login" value="Login">
+				</form>
+			</div>
 
-		<h1>Registreren</h1>
-		<form action="" method="POST">
-			<p>Gebruikersnaam: <input type="text" name="username2" value="<?php echo $username2; ?>"></p>
-			<p>Wachtwoord: <input type="password" name="password2"></p>
-			<p>Wachtwoord bevestigen: <input type="password" name="password2_sub"></p>
-			<p><span style="color: red; text-shadow: 0px 0px 2px #000000;"><?php echo $error2; ?></span></p>
-			<input type="submit" name="register" value="Registreren">
-		</form>
-
+			<div class="register">
+				<h1>Registreren</h1>
+				<form action="" method="POST">
+					<p><span>Gebruikersnaam: </span><input type="text" name="username2" value="<?php echo $username2; ?>"></p>
+					<p><span>Wachtwoord: </span><input type="password" name="password2"></p>
+					<p><span>Wachtwoord bevestigen: </span><input type="password" name="password2_sub"></p>
+					<p><span style="color: red; text-shadow: 0px 0px 2px #000000;"><?php echo $error2; ?></span></p>
+					<input type="submit" name="register" value="Registreren">
+				</form>
+			</div>
+		</div>
 	</body>
 </html>

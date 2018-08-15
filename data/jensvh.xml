@@ -1,30 +1,37 @@
 <?xml version="1.0"?>
 <root>
   <info>
-    <total string="Totaal gereden: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </total>
+    <totaal string="Totaal gereden: X uur en Y minuten.">
+      <uren>20</uren>
+      <minuten>15</minuten>
+    </totaal>
+    <olie string="Uren gereden met olie: X uur en Y minuten.">
+      <uren>0</uren>
+      <minuten>0</minuten>
+    </olie>
+    <oliefilter string="Uren gereden met olie filter: X uur en Y minuten.">
+      <uren>0</uren>
+      <minuten>0</minuten>
+    </oliefilter>
     <piston string="Uren gereden met piston: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
+      <uren>0</uren>
+      <minuten>0</minuten>
     </piston>
-    <oil string="Uren gereden met olie: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </oil>
-    <oil_filter string="Uren gereden met olie filter: X uur en Y minuten.">
-      <hours>0</hours>
-      <minutes>0</minutes>
-    </oil_filter>
   </info>
   <settings>
     <alert string="Melding X uur op voohand ontvangen.">2</alert>
     <piston string="Piston om de X uur vervangen.">20</piston>
-    <olie string="Olie om de X uur vervangen.">2</olie>
+    <olie string="Olie om de X uur vervangen.">3</olie>
     <oliefilter string="Oliefilter om de X uur vervangen.">10</oliefilter>
   </settings>
   <tracks>
+    <example>
+      <naam string="Naam: X."/>
+      <adres string="Adres: X."/>
+      <band string="Band: X."/>
+      <voorvering string="Voorvering: X klikken."/>
+      <achtervering string="Achtervering: X klikken."/>
+    </example>
     <track>
       <naam string="Naam: X.">Axel</naam>
       <adres string="Adres: X.">Te Axel</adres>
@@ -32,9 +39,27 @@
       <voorvering string="Voorvering: X klikken.">20</voorvering>
       <achtervering string="Achtervering: X klikken.">10</achtervering>
     </track>
-    <track>
-      <naam string="Naam: X.">Lommel</naam>
-    </track>
   </tracks>
-  <logs/>
+  <logs>
+    <log>
+      <event>&lt;span&gt;1&lt;/span&gt; uur getraind.</event>
+      <date>09/08/2018</date>
+    </log>
+    <log>
+      <event>&lt;span&gt;2&lt;/span&gt; uur getraind.</event>
+      <date>09/08/2018</date>
+    </log>
+    <log>
+      <event>&lt;span&gt;10&lt;/span&gt; uur getraind.</event>
+      <date>09/08/2018</date>
+    </log>
+    <log>
+      <event>&lt;span&gt;2&lt;/span&gt; uur getraind.</event>
+      <date>09/08/2018</date>
+    </log>
+    <log>
+      <event>&lt;span&gt;2&lt;/span&gt; uur getraind.</event>
+      <date>09/08/2018</date>
+    </log>
+  </logs>
 </root>

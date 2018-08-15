@@ -73,3 +73,7 @@ function removeActive(items) {
         items[i].classList.remove("active");
     }
 }
+
+document.addEventListener("click", function (e) {
+    closeAllItems();
+});

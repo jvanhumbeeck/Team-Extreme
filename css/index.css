@@ -1,0 +1,19 @@
+@media screen and (max-width: 1111px) {
+	.header {
+		display: block;
+	}
+
+	.header h1 {
+		margin-bottom: 0.5em;
+	}
+
+	.nav {
+		display: block;
+		float: none;
+		margin-top: 0;
+	}
+
+	.nav a {
+    	margin: 0 .6em .5em 0;
+	}
+}

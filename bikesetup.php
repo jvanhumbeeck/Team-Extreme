@@ -21,7 +21,8 @@ $data = new xmlParser(getCookie("data"));
 	<head>
 		<title>Team Extreme</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="icon" href="images/favicon.jpg">
+		<link rel="stylesheet" type="text/css" href="css/bikesetup.css">
+		<link rel="icon" href="images/favicon.png">
 	</head>
 	
 	<body class="chain" style="background-color: #bb1313;">
@@ -34,106 +35,97 @@ $data = new xmlParser(getCookie("data"));
 			</div>
 		</div>
 
-		<!-- body -->
-		<div class="body">
-
-			<!-- temp buttons -->
-			<form method="POST" action="hours.php">
-				<input type="submit" value="Uren Toevoegen">
+		<!-- Alerts -->
+		<div class="alert-list">
+			<form id="list" action="data.php" method="POST">
+				<input type="hidden" name="function" value="reset">
 			</form>
+		</div>
 
-			<form method="POST" action="parcour.php">
-				<input type="submit" value="Parcour Toevoegen">
-			</form>
+		<!-- GRID LAYOUT -->
+		<div class="grid-container">
 
-			<form method="POST" action="data.php">
-				<input type="hidden" name="function" value="changePiston">
-				<input type="submit" value="Piston Vervangen">
-			</form>
+			<!-- body -->
+			<div class="body">
 
-			<form method="POST" action="data.php">
-				<input type="hidden" name="function" value="changeOilfilter">
-				<input type="submit" value="Olie filter Vervangen">
-			</form>
+				<!-- temp buttons -->
+				<form method="POST" action="hours.php">
+					<input type="submit" value="Uren Toevoegen">
+				</form>
 
-			<form method="POST" action="data.php">
-				<input type="hidden" name="function" value="changeOil">
-				<input type="submit" value="Olie vervangen">
-			</form>
+				<form method="POST" action="parcour.php">
+					<input type="submit" value="Parcour Toevoegen">
+				</form>
 
-			<!-- Bike Setup -->
-			<h1>BikeSetup</h1>
+				<br>
 
-			<!-- Bike info -->
-			<div class="info">
-				<p>Totaal gereden: <span><?php 
-				$total = floatval($data->getTotalHours()); 
-				$hours = floor($total);
-				$minutes = floatval((floatval($total) - floatval($hours))*floatval(60.0));
-				if($minutes < (ceil($minutes) - 0.5)) {
-					$minutes = ceil($minutes - 1);
-				}
-				echo $hours . "</span> uur en <span>" . ceil($minutes) . "</span> minuten";?>.</p>
-				<p>Totaal gereden met piston: <span><?php 
-				$total = floatval($data->getPistonHours()); 
-				$hours = floor($total);
-				$minutes = floatval((floatval($total) - floatval($hours))*floatval(60.0));
-				if($minutes < (ceil($minutes) - 0.5)) {
-					$minutes = ceil($minutes - 1);
-				}
-				echo $hours . "</span> uur en <span>" . ceil($minutes) . "</span> minuten";?>.</p>
-				<p>Totaal gereden met olie filter: <span><?php 
-				$total = floatval($data->getOilfilterHours()); 
-				$hours = floor($total);
-				$minutes = floatval((floatval($total) - floatval($hours))*floatval(60.0));
-				if($minutes < (ceil($minutes) - 0.5)) {
-					$minutes = ceil($minutes - 1);
-				}
-				echo $hours . "</span> uur en <span>" . ceil($minutes) . "</span> minuten";?>.</p>
-				<p>Totaal gereden met olie: <span><?php 
-				$total = floatval($data->getOilHours()); 
-				$hours = floor($total);
-				$minutes = floatval((floatval($total) - floatval($hours))*floatval(60.0));
-				if($minutes < (ceil($minutes) - 0.5)) {
-					$minutes = ceil($minutes - 1);
-				}
-				echo $hours . "</span> uur en <span>" . ceil($minutes) . "</span> minuten";?>.</p>
-			</div>
+				<form id="reset" class="block" method="POST" action="data.php">
+					<input type="hidden" name="function" value="reset">
+					<p>
+						Vervang: 
+						<select name="name" form="reset">
+							<option value="" style="display:none;" selected> selecteer </option>
+							<?php
 
-			<!-- Tracks -->
-			<div class="parcour-info">
-				<form id="track" method="POST">
-					<h2>Parcour info</h2>
-					<p>Parcour: </p>
-					<div class="autocomplete">
-						<input id="input" type="text" name="name" value="<?php if(isset($_POST["name"])){echo $_POST["name"];} ?>" autocomplete="off">
-					</div>
-					<input type="submit" value="Submit">
+							foreach($data->getInfo()->children() as $info) {
+								if($info->getName() == "totaal") {continue;}
+								echo '<option value"' . $info->getName() . '">' . $info->getName() . '</option>';
+							}
+
+							?>
+						</select>
+						<input type="submit" name="" value="Vervang">
+					</p>
+				</form>
+
+				<!-- Bike Setup -->
+				<h1>BikeSetup</h1>
+
+				<!-- Bike info -->
+				<div class="info">
 					<?php
 
-					if(isset($_POST["name"])) {
-						$track = $data->getTrack($_POST["name"]);
-						if($_POST["name"] == "") {
-
-						}else if($track == null) {
-							echo "<p style='display: block; color: #790c0c'>\"". $_POST["name"] . "\" is geen parcour.</p>";
-						}else {
-							echo "<p style='display: block;'>Adress: <span>" . $track->adress . "</span>.</p>";
-							echo "<p style='display: block;'>Band: <span>" . $track->tire . "</span>.</p>";
-							echo "<p style='display: block;'>Voorvering: <span>" . $track->susp_front . "</span> klikken.</p>";
-							echo "<p style='display: block;'>Achtervering: <span>" . $track->susp_rear . "</span> klikken.</p>";
-							echo '</form>';
-							echo '<form method="POST" action="data.php">';
-							echo '<input type="hidden" name="function" value="bikesetup">';
-							echo '<input type="hidden" name="track" value="' . $_POST["name"] . '">';
-							echo '<input type="submit" name="editParcour" value="Edit parcour" formaction="parcour.php">';
-							echo '<input type="submit" name="deleteParcour" value="Delete parcour">';
-							echo '</form>';
-						}
+					foreach($data->getInfo()->children() as $child) {
+						echo "<p>" . $data->getMessage("info//" . $child->getName()) . "</p>";
 					}
 
 					?>
-				</form>
+				</div>
+
+				<!-- Tracks -->
+				<div class="parcour-info">
+					<form class="block" method="POST">
+						<h2>Parcour info</h2>
+						<p style="margin: 0; display: inline-block;">Parcour: </p>
+						<div class="autocomplete">
+							<input id="input" type="text" name="name" value="<?php if(isset($_POST["name"])){echo $_POST["name"];} ?>" autocomplete="off">
+						</div>
+						<input type="submit" value="Submit">
+					</form>
+						<?php
+
+						if(isset($_POST["name"])) {
+							$track = $data->getTrack($_POST["name"]);
+							if($_POST["name"] == "") {
+
+							}else if($track == null) {
+								echo "<p style='color: #790c0c'>Parcour \"". $_POST["name"] . "\" is niet gevonden.</p>";
+							}else {
+								foreach($track->children() as $node) {
+									echo "<p>" . $data->getMessage($node) . "</p>";
+								}
+								echo '<form method="POST" action="data.php">';
+								echo '<input type="hidden" name="function" value="deleteTrack">';
+								echo '<input type="hidden" name="track" value="' . $_POST["name"] . '">';
+								echo '<input type="submit" name="editParcour" value="Parcour wijzigen" formaction="parcour.php">';
+								echo '<input type="submit" name="deleteParcour" value="Parcour verwijderen">';
+								echo '</form>';
+							}
+						}
+
+						?>
+					</form>
+				</div>
 			</div>
 
 
@@ -141,26 +133,27 @@ $data = new xmlParser(getCookie("data"));
 			<div class="log">
 				<h2>Log</h2>
 				<?php
-
-				foreach ($data->getLogs() as $log) {
-					echo '<p>' . $log->event . '</p>';
+	
+				$log = $data->getLogs();
+				for($int = (sizeof($log)>10) ? sizeof($log) - 10 : 0; $int < sizeof($log); $int++) {
+					echo '<p>[' . $log[$int]->date . '] ' . $log[$int]->event . '</p>';
 				}
 
 				?>
 			</div>
 
-			<!-- log out button -->
-			<form action="data.php" method="POST">
-				<input type="hidden" name="function" value="logout">
-				<input type="submit" value="Uitloggen">
-			</form>
-
-			<!-- delete account button -->
-			<form action="user.php" method="POST">
-				<input type="submit" name="signout" value="Account verwijderen">
-			</form>
-
 		</div>
+
+		<!-- log out button -->
+		<form action="data.php" method="POST">
+			<input type="hidden" name="function" value="logout">
+			<input type="submit" value="Uitloggen">
+		</form>
+
+		<!-- delete account button -->
+		<form action="user.php" method="POST">
+			<input type="submit" name="signout" value="Account verwijderen">
+		</form>
 
 		<!-- scripts -->
 		<script src="javascript/script.js"></script>
@@ -169,9 +162,103 @@ $data = new xmlParser(getCookie("data"));
 		$tracks = $data->getTracks();
 		$string = "";
 		foreach ($tracks as $track) {
-			$string .= '"' . $track->name . '",';
+			$string .= '"' . $track->naam . '",';
 		}
 		echo rtrim($string,", ");
 		?>];</script>
+
+		<script type="text/javascript">
+			function addWarning(name, uur, min) {
+				var form = document.getElementById("list");
+
+				var alert = document.createElement("DIV");
+				alert.classList.add('warn');
+				alert.classList.add('alert');
+
+				var warn = document.createElement("p");
+				warn.innerHTML = "Opgelet!";
+				warn.classList.add('bold');
+				alert.appendChild(warn);
+
+				var string = document.createElement("p");
+				string.innerHTML = "Nieuw(e) " + name + " nodig binnen " + uur + " en " + min + " minuten.";
+				alert.appendChild(string);
+
+				var button = document.createElement("button");
+				button.innerHTML = "Vervang";
+				button.name = "name";
+				button.value = name;
+				button.classList.add("button");
+				button.addEventListener("submit", function(event) {
+					warnClick(event.target);
+				});
+				alert.appendChild(button);
+
+				form.appendChild(alert);
+			}
+
+			function addDanger(name) {
+				var form = document.getElementById("list");
+
+				var alert = document.createElement("DIV");
+				alert.classList.add('alert');
+				alert.classList.add('danger');
+
+				var warn = document.createElement("p");
+				warn.innerHTML = "Opgepast!";
+				warn.classList.add('bold');
+				alert.appendChild(warn);
+
+				var string = document.createElement("p");
+				string.innerHTML = "Nieuw(e) " + name + " nodig!";
+				alert.appendChild(string);
+
+				var button = document.createElement("button");
+				button.innerHTML = "Vervang";
+				button.name = "name";
+				button.value = name;
+				button.classList.add("button");
+				button.addEventListener("submit", function(event) {
+					warnClick(event.target);
+				});
+				alert.appendChild(button);
+
+				form.appendChild(alert);
+			}
+
+			function warnClick(warn) {
+				warn.style.display = "none";
+			}
+		</script>
+
+		<?php
+
+		//check for alert;
+
+		$alert = $data->getNode("settings//alert");
+
+		foreach($data->getInfo()->children() as $info) {
+			if($info->getName() == "totaal") {
+				continue;
+			}
+
+			$time = $info->uren + ($info->minuten / 60);
+			$change = $data->getNode("settings//" . $info->getName());
+
+			if($time >= $change) {
+				echo '<script>window.addEventListener("load", addDanger("' . $info->getName() . '"));</script>';
+			}else if(($time + $alert) >= $change) {
+				if($info->minuten == 0) {
+					$uur = $change - $info->uren;
+					$min = 0;
+				}else {
+					$uur = $change - $info->uren - 1;
+					$min = 60 - $info->minuten;
+				}
+				echo '<script>window.addEventListener("load", addWarning("' . $info->getName() . '", ' . $uur . ', ' . $min . '));</script>';
+			}
+		}
+
+		?>
 	</body>
 </html>

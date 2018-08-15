@@ -2,44 +2,14 @@
 	box-sizing: border-box;
 }
 
-html  {
-	min-height: 100%;
-}
 
-body  {
-	min-height: 100%;
-	 margin: 0 1.34rem;
-	 background-position: center;
-	 background-repeat: no-repeat;
-	 -webkit-background-size: cover;
-  	 -moz-background-size: cover;
-  	 -o-background-size: cover;
-  	 background-size: cover;
-  	 background-blend-mode: screen;
-  	 padding-bottom: 2em;
-}
-
-.background-img {
-	z-index: -1;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-size: cover;
-	background-position: center;
-}
-
-form:not(#track) {
-	display: inline-block;
-	margin: 0.5rem 0.5rem 0 0;
-}
-
+/* ----------------------------- HEADER ------------------------------- */
 .header {
 	border-radius: 15px;
 	padding: 0 1.34em;
-	background-color: #1a4e49;
-	overflow: auto;
+	margin: 1rem 0;
+	background-color: #163c38;
+	overflow: hidden;
 }
 
 .header h1 {
@@ -51,7 +21,7 @@ form:not(#track) {
 }
 
 .header h1:hover {
-    text-shadow: 0px 0px 1px #FFFFFA;
+    text-shadow: 0px 0px 1px #ff9090;
     color: #ff0012;
 }
 
@@ -123,111 +93,7 @@ form:not(#track) {
 	text-shadow: 5px 5px 20px 20px #000000fc;
 }
 
-.autocomplete {
-	position: relative;
-	display: inline-block;
-}
-
-.autocomplete input:focus {
-	outline: auto 5px #DA2C38;
-}
-
-.autocomplete-list {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 100%;
-	z-index: 99;
-	border: 1px solid #DA2C38;
-	border-bottom: none;
-	border-top: none;
-	outline: auto 5px #DA2C38;
-	color: white;
-}
-
-.autocomplete-list div {
-	background-color: #1a4e49;
-	border-bottom: 1px solid #DA2C38;
-	padding: 0.2em 0.3em;
-}
-
-.autocomplete-list div:hover {
-	background-color: #212d2c;
-}
-
-.autocomplete-list .active {
-	background-color: #DA2C38;
-	color: white;
-}
-
-.log {
-	position: absolute;
-	right: 15px;
-	top: 9em;
-	padding: 0 1em;
-	border: 3px solid gray;
-	border-radius: 10px;
-	background-color: #e0dcdc;
-}
-
-.log h2 {
-	margin-left: 0.6em;
-}
-
-.log p::before {
-	content: '-';
-	margin: 0 0.3em;
-}
-
-span {
-	color: #443232;
-}
-
-.parcour-info p {
-	display: inline-block;
-	margin-right: 0.5em;
-}
-
-.parcour-info select {
-	text-align-last:center;
-}
-
-#parcour p, #parcour {
-	display: block;
-}
-
-input[type="submit"] {
-	background: transparent;
-	border: none;
-	display: inline-block;
-	font-family: sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	color: #ff0000;
-	font-size: 0.75em;
-	border: 2px solid #fbb4b4;
-	border-radius: 25px;
-	padding: 5px 10px;
-	background-color: #000000bd;
-	box-shadow: 0px 0px 5px #fbb4b4;
-	text-shadow: 0px 0px 1px #ff0000;
-	transition: box-shadow .3s, text-shadow .3s, color .3s, border-color .3s;
-	margin: 0.2rem 0.5rem 0 0;
-}
-
-input[type="submit"]:hover {
-	cursor: pointer;
-	box-shadow: 0px 0px 10px #000000;
-	text-shadow: 0px 0px 10px #000000;
-	border-color: #DA2C38;
-	color: #fff;
-}
-
-a[target=_blank] {
-	display: none;
-}
-
-@media screen and (max-width: 1175px) {
+@media screen and (max-width: 750px) {
 	.header {
 		display: block;
 	}
@@ -245,19 +111,75 @@ a[target=_blank] {
 	.nav a {
     	margin: 0 .6em .5em 0;
 	}
-
-	.log {
-		top: 17em;
-	}
 }
 
-@media screen and (max-width: 750px) {
-	.log {
-		position: relative;
-		right: initial;
-		top: initial;
-	}
+/* ----------------------------- BUTTONS ----------------------------- */
+input[type="submit"], .button {
+	background: transparent;
+	border: none;
+	display: inline-block;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 4px;
+	color: #ff0000;
+	font-size: 0.75em;
+	border: 2px solid #fbb4b4;
+	border-radius: 25px;
+	padding: 5px 10px;
+	background-color: #000000bd;
+	box-shadow: 0px 0px 5px #fbb4b4;
+	text-shadow: 0px 0px 1px #ff0000;
+	transition: box-shadow .3s, text-shadow .3s, color .3s, border-color .3s;
+	margin: 0.4rem 0.5rem 0 0;
 }
+
+input[type="submit"]:hover, .button:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	border-color: #DA2C38;
+	color: #fff;
+}
+
+/* ----------------------------------- FORMS ---------------------------- */
+form {
+	display: inline-block;
+}
+
+select {
+	text-align-last: center;
+}
+
+/* ----------------------------------- SPANS --------------------------- */
+span {
+	color: #4a3d3d;
+}
+
+.error {
+	color: red;
+}
+
+/* ----------------------------- BACKGROUND --------------------------- */
+html  {
+	min-height: 100%;
+}
+
+body {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: screen;
+	margin: 0 1.34rem 1.34rem 1.34rem;
+	
+}
+
+/*@media screen and (min-width: 1300px) {
+	body {
+		margin: 0 auto 1.34rem auto;
+		max-width: calc(1300px - 2.68rem);
+	}
+}*/
 
 @media screen and (max-height: 480px) {
 	.chain {background-image: url("../images/480p/chain.jpg");}
@@ -293,4 +215,9 @@ a[target=_blank] {
 	.race {background-image: url("../images/1280p/race.jpg")}
 	.tech {background-image: url("../images/1280p/tech.jpg")}
 	.turnstile {background-image: url("../images/1280p/turnstile.jpg");}
+}
+
+/* ------------------------- HIDE BANNER ---------------------------- */
+a[target=_blank] {
+	display: none;
 }

@@ -1,0 +1,177 @@
+
+
+/* --------------------------- ALERTS --------------------- */
+.alert-list {
+	position: relative;
+}
+
+.alert-list form {
+	display: block;
+	margin: 0;
+}
+
+.alert {
+	display: block;
+	position: relative;
+	width: 100%;
+	
+	margin: 1rem 0;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.alert::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: .5rem;
+}
+
+.alert .bold {
+	font-weight: bold;
+	margin-left: 1.5rem;
+}
+
+.warn {
+	background-color: #ffd17e;
+}
+
+.warn::before {
+	background-color: #EE7600;
+}
+
+.danger {
+	background-color: #ff7070;
+}
+
+.danger::before {
+	background-color: #ff0000;
+}
+
+.warn button {
+	color: #EE7600;
+	text-shadow: 0px 0px 1px #EE7600;
+}
+
+.warn button:hover {
+	border-color: #EE7600;
+}
+
+.danger button {
+	color: #ff0000;
+	text-shadow: 0px 0px 1px #ff0000;
+}
+
+.danger button:hover {
+	border-color: #ff0000;
+}
+
+.alert p {
+	display: inline-block;
+	margin-left: 0.5rem;
+	color: black;
+}
+
+.alert button {
+	display: block;
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+    background-color: #000000bd;
+    box-shadow: 0px 0px 5px #fff;
+    margin: 0;
+}
+
+.alert button:hover {
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	
+	color: #fff;
+}
+
+/* ------------------------------------ GRID ------------------------- */
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.grid-container h1 {
+	margin-top: .34rem;
+}
+
+@media screen and (max-width: 850px) {
+	.grid-container {
+		display: block;
+	}
+
+	.log {
+		margin-top: 1rem;
+	}
+}
+
+/* ------------------------------ AUTO COMPLETE ------------------------- */
+.autocomplete {
+	position: relative;
+	display: inline-block;
+}
+
+.autocomplete input:focus {
+	outline: auto 5px #DA2C38;
+}
+
+.autocomplete-list {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	z-index: 99;
+	border: 1px solid #DA2C38;
+	border-bottom: none;
+	border-top: none;
+	outline: auto 5px #DA2C38;
+	color: white;
+	max-height: 20em;
+	overflow-y: auto;
+}
+
+.autocomplete-list div {
+	background-color: #1a4e49;
+	border-bottom: 1px solid #DA2C38;
+	padding: 0.2em 0.3em;
+	cursor: pointer;
+}
+
+.autocomplete-list div:hover {
+	background-color: #212d2c;
+}
+
+.autocomplete-list .active {
+	background-color: #DA2C38;
+	color: white;
+}
+
+/* ----------------------------- LOGS ---------------------------- */
+.log {
+	position: relative;
+	min-width: 300px;
+	padding: 0 1em;
+	border: 3px solid gray;
+	border-radius: 10px;
+	background-color: #e0dcdc;
+}
+
+.log h2 {
+	margin-left: 0.6em;
+}
+
+.log p::before {
+	content: '-';
+	margin: 0 0.3em;
+}

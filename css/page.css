@@ -1,0 +1,236 @@
+p {
+	line-height: 2rem;
+}
+
+/* --------------------------- ADD VARIABLE MENU ------------------------ */
+.addVariable {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0, 0.5);
+}
+
+.addVariable .container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 1em;
+	background-color: #251e1e;
+	border-radius: 15px;
+}
+
+.addVariable h1 {
+	color: #f50000;
+	text-decoration: underline;
+}
+
+.addVariable p {
+	color: #cebaba;
+}
+
+.open {
+
+}
+
+.close {
+
+}
+
+/* ------------------------------ AUTO COMPLETE ------------------------- */
+.autocomplete {
+	position: relative;
+	display: inline-block;
+}
+
+.autocomplete input:focus {
+	outline: auto 5px #DA2C38;
+}
+
+.autocomplete-list {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	z-index: 99;
+	border: 1px solid #DA2C38;
+	border-bottom: none;
+	border-top: none;
+	outline: auto 5px #DA2C38;
+	color: white;
+	max-height: 20em;
+	overflow-y: auto;
+}
+
+.autocomplete-list div {
+	background-color: #1a4e49;
+	border-bottom: 1px solid #DA2C38;
+	padding: 0.2em 0.3em;
+	cursor: pointer;
+}
+
+.autocomplete-list div:hover {
+	background-color: #212d2c;
+}
+
+.autocomplete-list .active {
+	background-color: #DA2C38;
+	color: white;
+}
+
+/* ----------------------------------------- BUTTONS --------------------------- */
+.remove {
+	border: none;
+	font-family: Arial,sans-serif;
+	text-decoration: none;
+	background-color: #000000bd;
+	color: #FF0000;
+	border-radius: 2rem;
+	padding: 0.4rem 1rem 0.4rem 0.4rem;
+	border: 2px solid #fbb4b4;
+	box-shadow: 0px 0px 5px #fbb4b4;
+    text-shadow: 0px 0px 1px #ff0000;
+    transition: box-shadow .3s, text-shadow .3s, color .3s, border-color .3s;
+}
+
+.remove:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	border-color: #DA2C38;
+	color: #fff;
+}
+
+.delete {
+	padding: 2px 5px 2px 4px;
+	text-align: center;
+	background-color: #fbb4b4;
+	color: #FF0000;
+	border-radius: 50%;
+	margin-right: 0.2rem;
+	transition: color .3s ease, background-color .3s ease;
+
+}
+
+.delete::before {/* 14 * 16 px */
+	content: '\f068';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+.remove:hover .delete {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	border-color: #DA2C38;
+	color: #fff;
+	background-color: #FF0000;
+}
+
+/* ------------- */
+
+.terug {
+    font: inherit;
+	border: none;
+	font-family: Arial,sans-serif;
+	text-decoration: none;
+	background-color: #000000bd;
+	color: #FF0000;
+	border-radius: 2rem;
+	padding: 0.4rem 1rem 0.4rem 0.4rem;
+	border: 2px solid #fbb4b4;
+	box-shadow: 0px 0px 5px #fbb4b4;
+    text-shadow: 0px 0px 1px #ff0000;
+    transition: box-shadow .3s, text-shadow .3s, color .3s, border-color .3s;
+    margin: 0.5rem 0.5rem 0 0;
+}
+
+.back {
+	padding: 2px 8px 2px 7px;
+	text-align: center;
+	background-color: #fbb4b4;
+	color: #FF0000;
+	border-radius: 50%;
+	margin-right: 0.2rem;
+	transition: color .3s ease, background-color .3s ease;
+}
+
+.back::before {/* 8px * 16px */
+	content: '\f104';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+.terug:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	border-color: #DA2C38;
+	color: #fff;
+}
+
+.terug:hover .back {
+	cursor: pointer;
+	box-shadow: 0px 0px 10px #000000;
+	text-shadow: 0px 0px 10px #000000;
+	border-color: #DA2C38;
+	color: #fff;
+	background-color: #FF0000;
+	padding: 2px 5px 2px 4px;
+}
+
+.terug:hover .back::before {/*14px * 16px */ /* => 23*21px */
+	content: '\f100';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+/* ------------------------ User page -------------------------- */
+.user {
+	position: relative;
+}
+
+.user p span {
+	color: initial;
+	display: block;
+}
+
+.login {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 75%;
+}
+
+.register {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 75%;
+}
+
+@media screen and (max-width: 760px) {
+	.login {
+		left: 0;
+		right: initial;
+	}
+
+	.register {
+		right: 0;
+		left: initial;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.login, .register {
+		display: inline-block;
+		position: relative;
+		left: initial;
+		right: initial;
+		vertical-align:top;
+		margin: 1em;
+	}
+}

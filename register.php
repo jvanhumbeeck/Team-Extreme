@@ -67,7 +67,7 @@ else if (isset($_POST["register"]))
 		copy('example.xml', 'data/' . $_POST["username2"] . '.xml');
 
 		$file = new xmlParser($_POST["username2"]);
-		$file->Log("Account aangemaakt.");
+		$file->Log("Welkom, hier worden uw trainingen weergeven.");
 		$file->saveXml();
 
 		addCookie("data", $_POST["username2"]);
