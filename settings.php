@@ -24,7 +24,7 @@ $data = new xmlParser(getCookie("data"));
 	<body class="tech" style="background-color: #802a2a;">
 		<!-- header -->
 		<div class="header">
-			<h1 onclick="window.location.href = 'index.html';">Team Extreme</h1>
+			<h1 onclick="window.location.href = 'index.html';">Rememxbr</h1>
 			<div class="nav">
 				<a href="index.html"><span text="home">home</span></a>
 				<a href="bikesetup.php"><span text="bikesetup">bikesetup</span></a>

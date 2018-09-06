@@ -115,7 +115,6 @@
 
 /* ----------------------------- BUTTONS ----------------------------- */
 input[type="submit"], .button {
-	background: transparent;
 	border: none;
 	display: inline-block;
 	font-family: sans-serif;
@@ -132,11 +131,17 @@ input[type="submit"], .button {
 	text-shadow: 0px 0px 1px #ff0000;
 	transition: box-shadow .3s, text-shadow .3s, color .3s, border-color .3s;
 	margin: 0.4rem 0.5rem 0 0;
+	-webkit-appearance: none; /*Safari/Chrome*/
+    -moz-appearance: none; /*Firefox*/
+    -ms-appearance: none; /*IE*/
+    -o-appearance: none; /*Opera*/
+    appearance: none;
 }
 
 input[type="submit"]:hover, .button:hover {
 	cursor: pointer;
-	box-shadow: 0px 0px 10px #000000;
+	-webkit-box-shadow: 0px 0px 10px #000000;
+	        box-shadow: 0px 0px 10px #000000;
 	text-shadow: 0px 0px 10px #000000;
 	border-color: #DA2C38;
 	color: #fff;
@@ -168,18 +173,14 @@ html  {
 body {
 	background-position: center center;
 	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-repeat: no-repeat;
 	background-blend-mode: screen;
 	margin: 0 1.34rem 1.34rem 1.34rem;
 	
 }
-
-/*@media screen and (min-width: 1300px) {
-	body {
-		margin: 0 auto 1.34rem auto;
-		max-width: calc(1300px - 2.68rem);
-	}
-}*/
 
 @media screen and (max-height: 480px) {
 	.chain {background-image: url("../images/480p/chain.jpg");}

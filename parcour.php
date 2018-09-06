@@ -35,7 +35,7 @@ if(isset($_GET["error"])) {
 	<body class="corner" style="background-color: #bb1313;">
 		<!-- header -->
 		<div class="header">
-			<h1 onclick="window.location.href = 'index.html';">Team Extreme</h1>
+			<h1 onclick="window.location.href = 'index.html';">Rememxbr</h1>
 			<div class="nav">
 				<a href="index.html"><span text="home">home</span></a>
 				<a href="bikesetup.php"><span text="bikesetup">bikesetup</span></a>

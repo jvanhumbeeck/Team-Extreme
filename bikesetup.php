@@ -19,7 +19,7 @@ $data = new xmlParser(getCookie("data"));
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Team Extreme</title>
+		<title>Rememxbr</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/bikesetup.css">
 		<link rel="icon" href="images/favicon.png">
@@ -28,7 +28,7 @@ $data = new xmlParser(getCookie("data"));
 	<body class="chain" style="background-color: #bb1313;">
 		<!-- header -->
 		<div class="header">
-			<h1 onclick="window.location.href = 'index.html';">Team Extreme</h1>
+			<h1 onclick="window.location.href = 'index.html';">Rememxbr</h1>
 			<div class="nav">
 				<a href="index.html"><span text="Home">Home</span></a>
 				<a href="settings.php"><span text="Instellingen">Instellingen</span></a>
