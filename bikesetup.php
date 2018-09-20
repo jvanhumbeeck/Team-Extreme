@@ -181,7 +181,7 @@ $data = new xmlParser(getCookie("data"));
 				alert.appendChild(warn);
 
 				var string = document.createElement("p");
-				string.innerHTML = "Nieuw(e) " + name + " nodig binnen " + uur + " en " + min + " minuten.";
+				string.innerHTML = "Nieuw(e) " + name + " nodig binnen " + uur + " uur en " + min + " minuten.";
 				alert.appendChild(string);
 
 				var button = document.createElement("button");

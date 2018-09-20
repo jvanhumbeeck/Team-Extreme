@@ -175,8 +175,6 @@ class xmlParser
 		$track = $this->xml->tracks->addChild("track");
 		$track->addChild("naam", $name)->addAttribute("string", "Naam: X.");
 
-		print_r($array);
-
 		foreach($array as $key => $value) {
 			$track->addChild($key, $value)->addAttribute("string", $this->getNode("tracks//example//" . $key)['string']);
 		}
